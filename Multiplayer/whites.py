@@ -229,3 +229,4 @@ while not done:
     clock.tick(tickrate)
 
 pygame.quit()
+connection.close()

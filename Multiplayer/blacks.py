@@ -3,7 +3,7 @@ import socket
 import pickle
 
 listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-listener.bind(("127.0.0.1", 5000))
+listener.bind((socket.gethostname(), 5000))
 listener.listen(1)
 connection, whiteAddr = listener.accept()
 
@@ -216,3 +216,5 @@ while not done:
     clock.tick(tickrate)
 
 pygame.quit()
+listener.close()
+connection.close()
